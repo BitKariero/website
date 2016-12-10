@@ -39,11 +39,11 @@
 							<li><a href="requirements.html"><font color="rgb(0,0,92)">Requirements</font></a></li>
 							<li><a href="technical-specification.html"><font color="rgb(0,0,92)">Technical Specification</font></a></li>
 							<li>
-								<a href="#"><a href="index.html"><font color="rgb(0,0,92)">Progress</font></a></a>
+								<a href="index.html"><font color="rgb(0,0,92)">Progress</font>
 								<ul style="list-style-type:none">
 									<li><a href="experimentation.html">Experiments log</a></li>
 									<li>
-										<a href="#">Bi-weekly reports</a>
+										Bi-weekly reports</a>
 										<ul style="list-style-type:none">
 											<li><a href="biweekly_report_1.pdf">Report 1</a></li>
 											<li><a href="biweekly_report_2.pdf">Report 2</a></li>
@@ -60,79 +60,64 @@
 
 				</div>
 			<!-- Main -->
-				<div class="wrapper style1">
-
+				<div class="wrapper">
 					<div class="container">
 						<article id="main" class="special">
-							<header>
-								<!-- <h2><a href="#"><font color="rgb(0,0,92)">Research</font></a></a></h2> -->
-							</header>
+								<header>
+									<h2><font color="rgb(0,0,92)">Research Report</font></h2>
+								</header>
+
+								<section>
+									<header>
+										<h2><font color="rgb(0,0,92)">Overview</font></h2>
+									</header>
+
+									<p> At the beginning of the project, we researched the
+									available blockchain technology to understand how it works and
+									discover how we can use it for our application. We
+									concentrated on Bitcoin and Ethereum, comparing their
+									capabilities and judging how suitable they are for
+									implementing smart records. In addition, we looked for
+									previous work similar to what we intend to build, and wrote a
+									business plan for our project, as it was required for the Atos
+									IT Challenge. </p>
+
+								</section>
 
 							<section>
 								<header>
-									<h2><a href="#"><font color="rgb(0,0,92)">Research Report</font></a></a></h2>
+									<h2><font color="rgb(0,0,92)">Technology</font></h2>
 								</header>
 							</section>
 
 							<section>
 								<header>
-									<h3><a href="#"><font color="rgb(0,0,92)">1 - Bitcoin</font></a></a></h3>
+									<h3><font color="rgb(0,0,92)">1 - Bitcoin</font></h3>
 								</header>
-							</section>
-
-							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">1.1 - History of the Bitcoin</font></a></a></h4>
-								</header>
-								<p>
-									On October 31st, 2008, Satoshi Nakamoto announces<sup><a href="#">[1]</a></sup> that he has published a design
-									paper for Bitcoin<sup><a href="#">[2]</a></sup>, “a new electronic cash system that’s fully peer-to-peer, with no
-									trusted third party”.
-									Block 0 of the Bitcoin blockchain, the Genesis Block, is established at 18:15:05 GMT
-									on January 3rd, 2009<sup><a href="#">[3]</a></sup>. The block contains the message “The Times 03/Jan/2009
-									Chancellor on brink of second bailout for banks”<sup><a href="#">[4]</a></sup>.
-									Version 0.1 of the Bitcoin software was released on January 9th, 2009<sup><a href="#">[5]</a></sup>.
-								</p>
-							</section>
-
-							<section>
-								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">1.2 - History of the Bitcoin</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">1.1 - Rationale</font></h4>
 								</header>
 								<p>
 									The current system of electronic payments relies on trusted financial institutions to
 									process transactions. This trust-based model has inherent weaknesses:
+								</p>
 									<ul>
 									  <li> Non-reversible transactions are not possible; disputes need to be mediated.</li>
 									  <li>Small payments are infeasible; cost of mediation increases transaction costs.</li>
 									  <li>Transactions are not anonymous; third party must collect personal information.</li>
 									</ul>
+								<p>
 									Bitcoin, on the other hand, is an electronic payment system based on <i>cryptographic
 									proof of work</i> instead of trust, allowing two parties to transact directly with each other
 									without the need for a trusted third party.
 								</p>
-							</section>
-
-							<section>
-								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">1.3 - Technical Analysis</font></a></a></h4>
-								</header>
-								<p>
-									The Bitcoin paper gives a very high level overview of the system. It does not describe
-									how Bitcoin is actually implemented. If you only read the paper, you will have an inexact
-									(and in some cases incorrect) view of how Bitcoin works. For example, Bitcoin uses a
-									stack-based scripting language for transactions<sup><a href="#">[6]</a></sup>, but the paper does not mention it at
-									all.
-								</p>
-								<p>
-									To get an accurate understanding of Bitcoin internals, check the source code<sup><a href="#">[7]</a></sup>, the
-									developer guide<sup><a href="#">[8]</a></sup> and Mastering Bitcoin by Andreas Antonopoulos<sup><a href="#">[9]</a></sup>.
 								</p>
 							</section>
 
+
 							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">1.3.1 - Blockchain</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">1.2 - Blockchain</font></h4>
 								</header>
 								<p>
 									Bitcoin keeps a public ledger of all transactions, called the <i>block chain</i>. This is, in essence,
@@ -150,17 +135,17 @@
 
 							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">Overview</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">1.2.1 - Overview</font></h4>
 								</header>
 								<a href="#" class="image featured">
 									<figure>
 										<img src="images/bitcoin-block-data.svg" alt="" /></a></img>
-										<figcaption align="center">Figure 1.1: Simplified depiction of the Bitcoin block chain<sup><a href="#">[10]</a></sup></figcaption>
+										<figcaption align="center">Figure 1.1: Simplified depiction of the Bitcoin block chain</figcaption>
 									</figure>
 									<p>
 										A block chain, as the name suggests, is a digital <i>chain of blocks</i>. Each block contains
 										a timestamp, a <i>nonce</i> (a number whose purpose will be described later) and a Merkle
-										Tree<sup><a href="#">[11]</a></sup> that stores transactions.
+										Tree that stores transactions.
 									</p>
 									<p>
 										The blocks are cryptographically chained together using hashes. Each block contains
@@ -171,7 +156,7 @@
 									<p>
 										Computing a hash, however, is not very difficult. A usual CPU can compute roughly
 										a million SHA-256 hashes per second. GPUs can compute hundreds of millions of hashes
-										per second<sup><a href="#">[12]</a></sup>. ASICs (application-specific integrated circuits) are even faster. Under
+										per second. ASICs (application-specific integrated circuits) are even faster. Under
 										normal circumstances, it would be possible to modify previous blocks, as you could
 										simply recompute all subsequent hashes.
 									</p>
@@ -179,7 +164,7 @@
 
 							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">1.3.2 - Proof of Work</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">1.2.2 - Proof of Work</font></h4>
 								</header>
 								<p>
 									The block chain is maintained collaboratively by peers on the Bitcoin network. To
@@ -192,7 +177,7 @@
 									When there are multiple chains competing for acceptance in the network (for example,
 									when someone tries to rewrite a past block), consensus rules dictate that nodes will pick
 									as valid the chain that is longest, i.e. the chain that has most proof of work behind it
-									<sup><a href="#">[13]</a></sup>.
+									.
 								</p>
 								<p>
 									To successfully rewrite a past block, a malicious actor needs to re-generate all following
@@ -203,164 +188,14 @@
 							</section>
 
 							<section>
-								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">Implementation</font></a></a></h4>
-								</header>
-								<p>
-									The network only accepts a block as valid if the hash of its header is less than a certain
-									<i>hash target</i>, which is computed based on the network <i>difficulty</i>. The network sets the
-									difficulty and updates it every 2016 blocks<sup><a href="#">[14,15]</a></sup> so a block is generated, on average,
-									every 10 minutes.
-								</p>
-								<p>
-									Remember the nonce in the block header that we did not explain? This is where it
-									comes in. The nonce is a 32 bit integer that you can increment to change the block’s
-									hash. When mining, you try different nonces until the block header hashes to something
-									less than the hash target.
-								</p>
-								<p>
-									In practice, since the network difficulty is high, a 32 bit nonce is not enough to beat
-									the hash target, so miners also change  <font face="courier">extraNonce</font>, a field included in the coinbase
-									transaction of the block<sup><a href="#">[16,17,18]</a></sup>. As the coinbase transaction is included in the
-									Merkle Tree, any change propagates upwards into the Merkle root in the header.
-								</p>
-
-							</section>
-
-							<section>
-								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">1.3.3 - Transactions</font></a></a></h4>
-								</header>
-								<p>
-									A transaction has at least one input and one output. For normal transactions, each
-									input has to be the output of a previous transaction. When a transaction is made, each
-									output waits as an Unspent Transaction Output (UTXO) until a later input spends it.
-								</p>
-								<p>
-									It is important to note that coins are <strong>not fungible</strong>, i.e. they can be differentiated
-									from one another, based on their chain of ownership. When your Bitcoin wallet tells
-									you that you have a balance of 1,000 satoshis, it really means you have a total of 1,000
-									satoshis waiting in one or more UTXOs.
-								</p>
-							</section>
-
-							<section>
-								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">Coinbase Transactions</font></a></a></h4>
-								</header>
-								<p>
-									New coins are created in special transactions called <i>coinbase transactions</i><sup><a href="#">[21]</a></sup>. These
-									have a special input field called <i>coinbase</i><sup><a href="#">[22]</a></sup>, which isn’t the output of a previous
-									transaction — it creates coins.
-								</p>
-								<p>
-									The Bitcoin network allows miners to include a coinbase transaction at the beginning
-									of every block they mine. Miners claim the <i>block reward</i> by creating new coins for
-									themselves.
-								</p>
-
-							</section>
-
-							<section>
-								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">Transaction Fees</font></a></a></h4>
-								</header>
-								<p>
-									If the total value of a transaction’s outputs is greater than the total value of its inputs,
-									the difference can be collected by miners as a <i>transaction fee</i>, on top of the block reward
-									they get for mining the block. If a transaction doesn’t have a fee, miners have no
-									incentive to add it to their blocks.
-								</p>
-
-							</section>
-
-							<section>
-								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">Transaction types</font></a></a></h4>
-								</header>
-								<p>
-									Bitcoin uses a scripting system to process and define transactions. This language, called
-									Script, is stack-based and is purposefully not Turing-complete<sup><a href="#">[6]</a></sup>.
-								</p>
-								<p>
-									A script is a list of instructions recorded with each transaction that describes how
-									a person who wants to spend the transaction’s outputs can gain access to them in the
-									future. There are several main types of transactions:
-								</p>
-								<ul>
-									<li>
-										<strong>P2PKH</strong> - Pay to Public Key Hash
-										<p>
-											This is the most common type of transaction. To gain access to its outputs, the
-											recipient needs to prove that he can sign a message with the private key (S) which
-											corresponds to public key (P) that hashes to H.
-										</p>
-										<p>
-											To create a transaction, the payer needs to know the recipient’s address.
-										</p>
-										<p>
-											P2PKH addresses are the Base58Check encoding<sup><a href="#">[23]</a></sup> of version number 0, a hash
-											of the recipient’s public key (H), and a checksum. Due to the way they are constructed,
-											all P2PKH addresses start with the character “1” <sup><a href="#">[24]</a></sup>.
-										</p>
-										<p>
-											Example: <u>1</u>BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2
-										</p>
-									</li>
-									<li>
-										<strong>P2PK</strong> - Pay to Public Key
-										<p>
-											With this transaction type, the public key itself is stored in the locking script,
-											rather than a public-key-hash.
-										</p>
-										<p>
-											P2PKH is an improvement on this, as it has shorter addresses and provides some
-											security benefits (assuming addresses are not re-used).<sup><a href="#">[9]</a></sup>.
-										</p>
-									</li>
-									<li>
-										<strong>OP_RETURN</strong> - Data Output
-										<p>
-											Allows developers to add 40 bytes of non-payment data to a transaction output,
-											which is stored on the block chain.<sup><a href="#">[9]</a></sup>
-										</p>
-									</li>
-
-									<li>
-										<strong>P2PSH</strong> - Pay to Script Hash
-										<p>
-											To gain access to outputs sent via P2SH, the recipient must provide a script which
-											matches the given hash and data which makes that script evaluate to <font face="courier">True</font>.
-										</p>
-										<p>
-											This allows the recipient to implement various unusual security schemes. For
-											example, one can thus send bitcoins to <i>multi-signature addresses</i>, which require
-											the signatures of multiple people to spend the outputs<sup><a href="#">[25]</a></sup>.
-										</p>
-										<p>
-											P2SH addresses are the Base58Check encoding<sup><a href="#">[23]</a></sup> of version number 5, a hash
-											of the recipient’s public key (H), and a checksum. Due to the way they are constructed,
-											all P2SH addresses start with the character “3”<sup><a href="#">[24]</a></sup>.
-										</p>
-										<p>
-											Example: <u>3</u>EktnHQD7RiAE6uzMj2ZifT9YgRrkSgzQX
-										</p>
-										<p>
-											There is space for expansion, so more transaction types may be added in the future.
-										</p>
-									</li>
-								</ul>
-							</section>
-
-							<section>
 										<header>
-											<h4><a href="#"><font color="rgb(0,0,92)">1.3.4 Contracts</font></a></a></h4>
+											<h4><font color="rgb(0,0,92)">1.2.2 Contracts</font></h4>
 										</header>
 										<p>
 											Distributed contracts are a way of using Bitcoin transactions to enforce financial agreements.
 											They can be used to formalise and guarantee agreements in a way that does not
 											rely on the traditional court system. Example contracts include Escrow, Micropayment
-											channels and CoinJoin<sup><a href="#">[8]</a></sup>.
+											channels and CoinJoin<sup>[8]</sup>.
 										</p>
 										<p>
 											Several different types of contracts can be implemented in Script, but the language is
@@ -368,32 +203,21 @@
 											system specifically designed for smart contracts, check out Ethereum and its Turingcomplete
 											contract language, Solidity.
 										</p>
-								<p>
-									A transaction has at least one input and one output. For normal transactions, each
-									input has to be the output of a previous transaction. When a transaction is made, each
-									output waits as an Unspent Transaction Output (UTXO) until a later input spends it.
-								</p>
-								<p>
-									It is important to note that coins are <strong>not fungible</strong>, i.e. they can be differentiated
-									from one another, based on their chain of ownership. When your Bitcoin wallet tells
-									you that you have a balance of 1,000 satoshis, it really means you have a total of 1,000
-									satoshis waiting in one or more UTXOs.
-								</p>
 							</section>
 
 							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">1.4 - Proposed improvements</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">1.4 - Proposed improvements</font></h4>
 								</header>
 								<p>
 									Various proposals to improve certain aspects of Bitcoin have been published. Some
-									of them have been collected as BIPs (Bitcoin Improvement Proposals)<sup><a href="#">[26]</a></sup>. Others
+									of them have been collected as BIPs (Bitcoin Improvement Proposals). Others
 									proposals are stand-alone papers or forum posts. Some propose improvements of the
 									existing Bitcoin system, while others create entirely new crypto-currencies.
 								</p>
 								<p>
-									To get an accurate understanding of Bitcoin internals, check the source code<sup><a href="#">[7]</a></sup>, the
-									developer guide<sup><a href="#">[8]</a></sup> and Mastering Bitcoin by Andreas Antonopoulos<sup><a href="#">[9]</a></sup>.
+									To get an accurate understanding of Bitcoin internals, check the source code<sup>[7]</sup>, the
+									developer guide<sup>[8]</sup> and Mastering Bitcoin by Andreas Antonopoulos<sup>[9]</sup>.
 								</p>
 								<table style="width:100%" align="center" class="table1">
 								  <tr>
@@ -404,11 +228,11 @@
 								    <td align="center">Scalability</td>
 								    <td align="center">
 											<ul style="list-style-type:none">
-												<li>Increase block size <sup><a href="#">[27]</a></sup></li>
-												<li>Ultimate blockchain compression <sup><a href="#">[28]</a></sup></li>
-												<li>Mini-Blockchain Scheme <sup><a href="#">[29]</a></sup></li>
-												<li>Lighting Network <sup><a href="#">[30]</a></sup></li>
-												<li>Sharding <sup><a href="#">[31]</a></sup></li>
+												<li>Increase block size </li>
+												<li>Ultimate blockchain compression </li>
+												<li>Mini-Blockchain Scheme </li>
+												<li>Lighting Network </li>
+												<li>Sharding </li>
 											</ul>
 										</td>
 								  </tr>
@@ -416,8 +240,8 @@
 								    <td align="center">Lack of anonymity</td>
 								    <td align="center">
 											<ul style="list-style-type:none">
-												<li>Ring signatures<sup><a href="#">[32]</a></sup></li>
-												<li>zkSNARKssup<sup><a href="#">[33]</a></sup></li>
+												<li>Ring signatures</li>
+												<li>zkSNARKs</li>
 											</ul>
 										</td>
 								  </tr>
@@ -425,8 +249,8 @@
 										<td align="center">Lack of anonymity</td>
 								    <td align="center">
 											<ul style="list-style-type:none">
-												<li>Uncle Blocks<sup><a href="#">[34]</a></sup></li>
-												<li>Egalitarian proof of work<sup><a href="#">[32]</a></sup></li>
+												<li>Uncle Blocks</li>
+												<li>Egalitarian proof of work</li>
 											</ul>
 										</td>
 								    <td align="center"></td>
@@ -435,10 +259,10 @@
 								    <td align="center">Electricity Waste</td>
 								    <td align="center">
 											<ul style="list-style-type:none">
-												<li>Proof of Stake<sup><a href="#">[35-36]</a></sup></li>
-												<li>Proof of Elapsed time<sup><a href="#">[37]</a></sup></li>
-												<li>Proof of Capacity<sup><a href="#">[38]</a></sup></li>
-												<li>Proof of Burn<sup><a href="#">[39]</a></sup></li>
+												<li>Proof of Stake<sup>[35-36]</sup></li>
+												<li>Proof of Elapsed time</li>
+												<li>Proof of Capacity</li>
+												<li>Proof of Burn</li>
 											</ul>
 										</td>
 								  </tr>
@@ -447,17 +271,14 @@
 
 							<section>
 								<header>
-									<h3><a href="#"><font color="rgb(0,0,92)">2 - Ethereum</font></a></a></h3>
+									<h3><font color="rgb(0,0,92)">2 - Ethereum</font></h3>
 								</header>
-							</section>
-
-							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">2.1 - Previous Work</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">2.1 - Previous Work</font></h4>
 								</header>
 								<p>
 									The Bitcoin protocol does facilitate a weak version of <i>smart contracts</i>, however the
-									scripting language implemented in Bitcoin has several important limitations<sup><a href="#">[40]</a></sup>:
+									scripting language implemented in Bitcoin has several important limitations:
 									<ul>
 										<li><strong>Lack of Turing-completeness </strong> – the scripting language doesn’t have loops</li>
 										<li><strong>Value blindness</strong> – cannot control what amount is withdrawn; either the entire UTXO is withdrawn, or none of it is</li>
@@ -472,12 +293,12 @@
 
 							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">2.2 Rationale</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">2.2 Rationale</font></a></h4>
 								</header>
 								<p>
 									Ethereum aims to build “the ultimate abstract foundational layer”: a blockchain with a
 									built-in Turing-complete programming language, value awareness, blockchain awareness
-									and state<sup><a href="#">[40]</a></sup>.
+									and state.
 								</p>
 								<p>
 									Smart contracts, decentralised applications and even entirely new protocols (currencies,
@@ -490,57 +311,18 @@
 
 							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">2.3 Technical analysis</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">2.3 Technical overview</font></h4>
 								</header>
-								<p>
-									Ethereum aims to build “the ultimate abstract foundational layer”: a blockchain with a
-									built-in Turing-complete programming language, value awareness, blockchain awareness
-									and state<sup><a href="#">[40]</a></sup>.
-								</p>
-								<p>
-									Smart contracts, decentralised applications and even entirely new protocols (currencies,
-									reputation systems etc.) can be developed on top of the Ethereum block chain.
-								</p>
-								<p>
-									This new wave of blockchain-based technology is called “Blockchain 2.0”.
-								</p>
-							</section>
-
-
-							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">2.3.1 Accounts</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">2.3.1 Accounts</font></a></h4>
 								</header>
 								<p>
 									The state in Ethereum consists of objects called <i>accounts</i>. Each account has a 20-byte
 									address. Ethereum has two types of accounts: <i>externally owned accounts</i>, controlled by
-									private keys, and <i>contract accounts</i>, controlled by their contract’s code<sup><a href="#">[40]</a></sup>.
+									private keys, and <i>contract accounts</i>, controlled by their contract’s code.
 								</p>
 								<p>
-									An Ethereum account contains 4 fields <sup><a href="#">[41]</a></sup>:
-								</p>
-								<p>
-									<ul>
-										<li><font face="courier">nonce</font>– for externally owned accounts, the number of transactions sent; for contract accounts, the number of contract-creations made; used to make sure each transaction can only be processed once</li>
-										<li><font face="courier">balance</font>– number of Wei in this account</li>
-										<li><font face="courier">codeHash</font>(immutable) – for contract accounts, stores the hash of the EVM code of this account; the actual code is stored in the global state database</li>
-										<li><font face="courier">storageRoot</font>– a hash of the root node of a Merkle Patricia tree that encodes the storage contents of the account</li>
-										<li><font face="courier"></font></li>
-									</ul>
-								</p>
-							</section>
-
-							<section>
-								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">2.3.1 Accounts</font></a></a></h4>
-								</header>
-								<p>
-									The state in Ethereum consists of objects called <i>accounts</i>. Each account has a 20-byte
-									address. Ethereum has two types of accounts: <i>externally owned accounts</i>, controlled by
-									private keys, and <i>contract accounts</i>, controlled by their contract’s code<sup><a href="#">[40]</a></sup>.
-								</p>
-								<p>
-									An Ethereum account contains 4 fields <sup><a href="#">[41]</a></sup>:
+									An Ethereum account contains 4 fields :
 								</p>
 								<p>
 									<ul>
@@ -554,7 +336,7 @@
 
 							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">2.3.2 Transactions</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">2.3.2 Transactions</font></h4>
 								</header>
 								<p>
 										A <i>transaction</i> is a cryptographically-signed instruction created by an external actor.
@@ -562,7 +344,7 @@
 										transactions.
 								</p>
 								<p>
-									A transaction contains a number of standard fields<sup><a href="#">[41]</a></sup>:
+									A transaction contains a number of standard fields:
 								</p>
 								<p>
 									<ul>
@@ -599,7 +381,7 @@
 
 							<section>
 								<header>
-									<h4><a href="#"><font color="rgb(0,0,92)">2.3.3 Messages</font></a></a></h4>
+									<h4><font color="rgb(0,0,92)">2.3.3 Messages</font></h4>
 								</header>
 								<p>
 									Messages are used to pass <font face="courier">data</font> and <font face="courier">value</font> (Ether) between two accounts. A message
@@ -609,57 +391,111 @@
 
 							</section>
 
+							<section>
+								<header>
+									<h2><font color="rgb(0,0,92)">Previous Work</font></h2>
+								</header>
+
+								<h3><font color="rgb(0,0,92)"> Digital Certificates Project</font></h3>
+
+								<p> In June 2016, the MIT Media Lab released an experimental
+								system for issuing academic certificates (<a
+								href="http://certificates.media.mit.edu">Digital Certificates
+								Project</a>) and published <a
+								href="http://www.blockcerts.org/">BlockCerts</a>, an open
+								standard format for blockchain-based certificates, based on <a
+								href="https://openbadges.org/">Mozilla Open Badges</a>. The
+								system is built on top of the Bitcoin blockchain, using
+								OP_RETURN to store certificate hashes.</p>
+							</section>
+
 
 
 							<section>
 								<header>
-									<h2><a href="#"><font color="rgb(0,0,92)">Business Model</font></a></a></h2>
+									<h2><font color="rgb(0,0,92)">Business Model</font></h2>
 								</header>
+
+							<p>We would split our operations into two distinct units:</p>
+							<ul>
+    							<li>Non-profit foundation – runs the core infrastructure, i.e. protocol and CA cert lists</li>
+  								<li>For-profit company – provides value-added services</li>
+							</ul>
+
+							<p> As there are no hosting or maintenance costs associated with
+							the system, it is financially feasible to have it managed by a
+							non-profit. This provides an advantage against potential
+							for-profit competing systems (as long as our technology is not
+							surpassed) – our open system would be more attractive for third
+							parties to integrate with and potentially contribute to than a
+							for-profit competitor’s closed scheme. For the CA, we would use a
+							process similar to the Mozilla CA Certificate Policy to add
+							certification authorities in a fair and consistent manner.
+							</p>
+
+							<p> The for-profit company would build value-added services on top
+							of the infrastructure. There are several possibilities, and we
+							would likely offer all of them: </p>
+
+							<ul>
+								<li><em>Hosted BitKariero profiles</em>: users can host their CV
+							on our platform, with freemium pricing (basic profile is free, but
+							need to pay for additional features); when applying for a job,
+							simply send the recruiter a link to your profile – we handle all
+							the complexities of verifying it</li>
+
+								<li><em>Candidate database</em>: when uploading a CV to our platform,
+								users can choose to make it available to potential recruiters;
+								HR departments have to pay a fee to get access </li>
+
+								<li><em>Third-party integrations</em>: provide paid APIs for
+								integrating with applicant tracking systems, certification
+								pipelines, etc. </li>
+						</ul>
+
+						<p>To attract users to our platform, we would partner with
+						organisations that provide professional or academic certifications
+						(Microsoft, Cisco, RedHat, British Council, PMI) and offer
+						blockchain-based verifiable certificates.</p>
+
+						<p>The foundation will in effect create a competitive market for
+						building upon the open infrastructure, and the for-profit company
+						will move into a privileged position in that market.</p>
+
 							</section>
+
 
 							<section>
 								<header>
-									<h3>Proposal</h3>
+									<h2><font color="rgb(0,0,92)">Conclusions</font></h2>
 								</header>
-								<p>
-									We propose splitting our operations into two distinct units. One will run the core infrastructure, that is the protocol and CA cert lists, as an open and non-profit foundation. The other will provide value-added services on top of that in a for-profit manner.
 
-								</p>
+								<p> We decided to use Ethereum, as it is much better aligned
+								with our needs. While Bitcoin <em>does have</em> smart contract
+								capability, this is very rudimentary and difficult to use in
+								practice. Implementing records as Ethereum smart contracts gives
+								us great flexibility in terms of functionality – it allows us to
+								potentially implement dynamic records, multi-issuer records and
+								many other record types. </p>
+
+								<p>We will extend the work done by the MIT Media Lab and advance
+								the state of the art. </p>
+
 							</section>
+
+						</hr>
+
 							<section>
-								<header>
-									<h3>BitKariero is sustainable both as a for-profit and non-profit project</h3>
-								</header>
-								<header>
-									<h4>Sustainability as a Non-Profit Project</h4>
-								</header>
-								<p>
-									Running the core system as a non-profit will be financially feasible since it will use a decentralised blockchain with no inherit need for costly hosting. Being open to all, as long as our technology is not surpassed, a for-profit company has no reason to clone the infrastructure – unless they want to create a walled-garden. Not having ours as a walled garden will make it more enticing for third parties to add integrations for it and to potentially contribute to the core. For the CA list we would use a similar process to the Mozilla CA Certificate Policy to add third parties in a fair and consistent manner.
-								</p>
-							</section>
-							<section>
-							<header>
-									<h4>Sustainability as a For-Profit Project</h4>
-								</header>
-								<p>
-									As a for-profit we would provide an end user interface and hosting solution, whereby customers can have their own BitKariero profile hosted by us. On this profile they could include their verified references and records from the blockchain, and we will verify them and list them online in a manner that anyone can access without having to verify it themselves. Working off this, we could also provide tools for recruiters and companies to comb through these profiles. The for-profit will also provide APIs and work with other companies to implement integrations, and charge a commission for this work.
-								</p>
-							</section>
-							<section>
-								<header>
-									<h3>We see a bright future for BitKariero as a for-profit project</h3>
-								</header>
-								<p>
-									Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-									feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-									ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
-									egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-								</p>
+								Go to:
+
+								<ul>
+									<li><a href="bib.html"><strong>Bibliography</strong></a></li>
+									<li><a href="research.pdf"><strong>Full PDF</strong></a> (including standard format bibliography)</li>
+								</ul>
+
 							</section>
 						</article>
-
 					</div>
-
 				</div>
 
 			<!-- Footer -->
