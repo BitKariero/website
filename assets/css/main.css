@@ -1696,6 +1696,10 @@
 
 /* Sections/Article */
 
+	section > ul, ol {
+		margin-left: 3em;
+	}
+
 	section, article {
 		margin-bottom: 3em;
 	}
@@ -2332,7 +2336,7 @@
 	#banner {
 		background: #fff;
 		text-align: center;
-		padding: 2.5em 0 2.5em 0;
+		padding: 2.5em 0 0 0;
 		margin-bottom: 0;
 	}
 
