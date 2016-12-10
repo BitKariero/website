@@ -1551,7 +1551,7 @@
 /* Basic */
 
 	body {
-		background: #f0f4f4;
+		background: #ffffff;
 		color: #5b5b5b;
 		font-size: 15pt;
 		line-height: 1.85em;
@@ -2085,7 +2085,11 @@
 	.wrapper {
 		background: #fff;
 		margin: 0 0 2em 0;
-		padding: 6em 0 6em 0;
+		padding: 2.5em 0 2.5em 0;
+	}
+
+	.wrapper.last {
+		padding-bottom: 0
 	}
 
 		.wrapper.style2 {
@@ -2328,7 +2332,7 @@
 	#banner {
 		background: #fff;
 		text-align: center;
-		padding: 4.5em 0 4.5em 0;
+		padding: 2.5em 0 2.5em 0;
 		margin-bottom: 0;
 	}
 
