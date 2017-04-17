@@ -1,0 +1,26 @@
+.logo {
+  text-indent: -999999px;
+  background: url('images/bk-logo-large.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.twitter-timeline {
+  height: 500px;
+  ;
+}
+
+@media screen and (min-width: 760px) {
+  .logo {
+    min-width: 600px;
+  }
+}
+
+nav ul li a, article header h2 {
+  color: rgb(0, 0, 92) !important;
+}
+
+table td, table th {
+  border: 1px solid black;
+}

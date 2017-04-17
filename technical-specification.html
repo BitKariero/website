@@ -1,403 +1,409 @@
 <!DOCTYPE HTML>
-<!--
-	Helios by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
-	<head>
-		<link rel="shortcut icon" type="image/ico" href="favicon.png" />
-		<title>Technical Specification | BitKariero</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<style>
-			table.table1 {
-			    border-collapse: collapse;
-			    border-style: hidden;
-			}
-			table td, table th {
-			    border: 1px solid black;
-			}
 
-</style>
-	</head>
-	<body class="no-sidebar">
-		<div id="page-wrapper">
+<head>
+	<link rel="shortcut icon" type="image/ico" href="favicon.png" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+	<title>BitKariero</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
 
-			<!-- Header -->
-				<div id="header">
-
-					<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="index.html"><font color="rgb(0,0,92)">Home</font></a></li>
-							<li><a href="background-context.html"><font color="rgb(0,0,92)">Background</font></a></li>
-							<li><a href="research.html"><font color="rgb(0,0,92)">Research</font></a></li>
-							<li><a href="requirements.html"><font color="rgb(0,0,92)">Requirements</font></a></li>
-							<li><a href="technical-specification.html"><font color="rgb(0,0,92)">Technical Specification</font></a></li>
-							<li>
-								<a href="#"><a href="index.html"><font color="rgb(0,0,92)">Progress</font></a></a>
-								<ul style="list-style-type:none">
-									<li><a href="experimentation.html">Experiments log</a></li>
-									<li>
-										<a href="#">Bi-weekly reports</a>
-										<ul style="list-style-type:none">
-											<li><a href="biweekly_report_1.pdf">Report 1</a></li>
-											<li><a href="biweekly_report_2.pdf">Report 2</a></li>
-											<li><a href="biweekly_report_3.pdf">Report 3</a></li>
-											<li><a href="biweekly_report_4.pdf">Report 4</a></li>
-										</ul>
-									</li>
-									<li><a href="plan.html">Next term</a></li>
-								</ul>
-							</li>
-							<li><a href="team-page.html"><font color="rgb(0,0,92)">Team Page</font></a></li>
+<body class="no-sidebar">
+	<div id="page-wrapper">
+		<!-- Header -->
+		<div id="header">
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="#">Documentation</a>
+						<ul style="list-style-type:none">
+							<li><a href="background-context.html">Background</a></li>
+							<li><a href="research.html">Research report</a></li>
+							<li><a href="technical-specification.html">Technical specification</a></li>
 						</ul>
-					</nav>
-
-				</div>
-
-			<!-- Main -->
-				<div class="wrapper style1">
-
-					<div class="container">
-						<article id="main" class="special">
-							<header>
-								<h2><a href="#"><font color="rgb(0,0,92)">Technical Specification</font></a></h2>
-							</header>
-							<section>
-								<header>
-									<h3>1 Overview</h3>
-								</header>
-								<p>
-									Our system uses a blockchain to provide a decentralised record of individuals’ professional credentials.
-								</p>
-								<p>
-									Individuals can ask organisations (or other individuals) to cryptographically attach
-									references or endorsements to their profile. Requests for reference are implemented so
-									that, once the reference is provided, the individual cannot claim it was unsolicited or
-									refuse to accept it because of its content — references cannot be repudiated. Using the
-									same process, organisations can request reviews.
-								</p>
-								<p>
-									When creating a new profile, users have to self-attach a reference that grounds the
-									profile to a particular real-life identity (name, date of birth, corporate registration information,
-									etc.). If a user wants to be able to give verifiable references, they must
-									additionally have their identity grounded by a <i> trusted third party </i>.
-								</p>
-								<p>
-									The records attached to profiles, stored in the blockchain, do not include the actual
-									content of the reference or endorsement, but merely a hash of the content. This also
-									applies for the initial identity-grounding self-reference. Thus, profiles are public, but no
-									data is disclosed by default. Users can choose which parts of their profile to disclose by
-									selectively publishing the content of certain records.
-								</p>
-							</section>
-							<section>
-								<header>
-									<h3>2 Creating a profile and grounding its identity</h3>
-								</header>
-								<p>
-									To create a profile, a user must generate a public/private key-pair. The public key is
-									hashed to obtain a profile address, which is used to refer to the profile. The private key
-									is used to control the profile.
-								</p>
-								<p>
-									Before being able to request references from others, a user has to self-attach a reference
-									that grounds their identity.
-								</p>
-								<table style="width:100%" align="center" class="table1">
-								  <tr>
-								    <th><strong>Field</strong></th>
-								    <th><strong>Value</strong></th>
-								    <th><strong>Salt</strong></th>
-								    <th><strong>Hash</strong></th>
-								  </tr>
-								  <tr>
-								    <th>Name</th>
-								    <th>Michael Longworth</th>
-								    <th>@38Bv>y+ve5RiVwZ</th>
-								    <th>9916ffbd3944e34fb6d62e1048571e100b47ab5152fe53d21f261ff7d9b2d566</th>
-								  </tr>
-								  <tr>
-								    <th>Date of birth</th>
-								    <th>1980-12-02</th>
-								    <th>6W3aP5d!ZnR</th>
-								    <th>c300d1a45fb137bdcec8c3171a75949278c7b400b6a16df986315700380892183</th>
-								  </tr>
-								  <tr>
-								    <th>Identification code</th>
-								    <th>61152345</th>
-								    <th>VWn9fpQ(5LHzZ</th>
-								    <th>633209a51879bb3b64293c0ac16e72770ea55c8d5c1013febbf4802b4fdc3c2b</th>
-								  </tr>
-								</table>
-								<p>
-									To self-attach a reference that grounds your identity, proceed as follows:
-								</p>
-									<ol type="1">
-									  <li> For each (<font face="courier">fieldName</font>, <font face="courier">value</font>) pair, generate a unique random <font face="courier">salt</font></li>
-									  <li>Hash each (<font face="courier">value</font>, <font face="courier">salt</font>) tuple separately</li>
-									  <li>Collate all (<font face="courier">fieldname</font>, <font face="courier">value</font>) pairs</li>
-									  <li>Sign the result with your private key to obtain your <i>grounded identity</i></li>
-									  <li>Self-attach your grounded identity to your profile</li>
-									</ol>
-								<p>
-									The user’s profile management software needs to store the field values and salts to
-									be able to, at a later time, prove to a third party that the profile is indeed linked with
-									the user’s real-life identity.
-								</p>
-
-							</section>
-							<section>
-								<header>
-									<h4>2.1 Third-party grounding</h4>
-								</header>
-								<p>
-									If a user (organisation or individual) wants to give out references that are verifiable by
-									others, in addition to the procedure above, their identity must also be grounded by a
-									trusted <i> identity provider </i> (IdP)
-								</p>
-								<p>
-									To have their identity grounded by an IdP, users must provide proof of their real identity.
-									For example, they could provide a copy of their passport or corporate registration
-									documents.
-								</p>
-								<p>
-									For easier use in practice, the profile management software can be shipped with a set
-									of predefined trusted IdPs.
-								</p>
-							</section>
-							<section>
-								<header>
-									<h3>3 Attaching records to profiles</h3>
-								</header>
-								<p>
-									Records are implemented as smart contracts. To request a reference or endorsement, a
-									user <strong>A</strong> creates a smart contract that the referee <strong>B</strong> can add to. For example:
-								</p>
-								<table style="width:100%" align="center" >
-								  <tr>
-								    <th align="center"><strong>Field</strong></td>
-								    <th align="center"><strong>Initial value</strong></td>
-								    <th align="center"><strong>Strongs</strong></td>
-								  </tr>
-								  <tr>
-								    <td align="center">belongsTo</td>
-								    <td align="center"><i>addr<sub>A</sub></i></td>
-								    <td align="center">Immutable</td>
-								  </tr>
-								  <tr>
-								    <td align="center">providedBy</td>
-								    <td align="center"><i>addr<sub>B</sub></i></td>
-								    <td align="center">Immutable</td>
-								  </tr>
-								  <tr>
-								    <td align="center">referenceHash</td>
-								    <td align="center"></td>
-								    <td align="center"></td>
-								  </tr>
-								  <tr>
-								    <td align="center"><strong>Method</strong></td>
-								    <td align="center"><strong>Can be called by</strong></td>
-								    <td align="center"><strong>Comment</strong></td>
-								  </tr>
-								  <tr>
-								    <td align="center">addReference(<i>hash</i>)</td>
-								    <td align="center">B</td>
-								    <td align="center">Can only be called once</td>
-								  </tr>
-								</table>
-								<p>
-									To provide the reference, <strong>B</strong> calls the <font face="courier">addReference()</font> method of the contract and
-									passes it a hash of the reference’s content. Through external means (e.g. via e-mail), <strong>B</strong>
-									sends <strong>A</strong> the content of the reference and discloses a part of their identity (e.g., <font face="courier">value</font>
-									and <font face="courier">salt</font> of their name). <strong>A</strong> stores this information for later use.
-								</p>
-								<p>
-									The system is extensible, so different smart contracts can be deployed for different
-									types of records: certificates, employment records, professional association membership,
-									school transcripts, etc.
-								</p>
-							</section>
-							<section>
-								<header>
-									<h4>3.1 Floating records</h4>
-								</header>
-								<p>
-									A floating record is attached directly to a real-life
-									identity, rather than to a profile. Using floating records,
-									organisations can emit certificates for people who haven’t yet
-									created a profile.
-								</p>
-								<p>
-									To claim a floating record, a user has to prove that their
-									profile’s grounded identity is the same as the record’s.
-								</p>
-							</section>
-
-
-							<section>
-								<header>
-									<h3>4 Publishing verifiable CVs</h3>
-								</header>
-								<header>
-									<h4>4.1 Publishing a single verifiable reference</h4>
-								</header>
-								<p>
-									To make a reference provided by <strong>B</strong> verifiable, <strong>A</strong> discloses their address, the reference’s
-									content (e.g. <i>Good employee</i>) and part of <strong>B</strong>’s identity (e.g. Name: <i>ACME Corp</i>).
-								</p>
-								<p>
-									To verify the validity of the reference, proceed as follows:
-								</p>
-								<p>
-									<ol>
-									  <li>Hash the reference content and check that it matches the stored <font face="courier">referenceHash</font></li>
-									  <li>Check that the smart contract belongsTo <strong>A</strong></li>
-									  <li>Verify that <strong>B</strong> disclosed <strong>B</strong>’s actual identity</li>
-									  <li>Confirm that <strong>B</strong>’s identity has been grounded by a trusted IdP</li>
-									</ol>
-								</p>
-								<p>
-									If all the steps are successful, we have proved that <strong>B</strong> (<i>ACME Corp</i>) has said that
-									whoever owns <strong>A</strong>’s profile was a <i>Good employee</i>.
-								</p>
-								<p>
-									Step 1 of the verification procedure may differ slightly based on the type of record
-									that is being verified, as it depends on how the information is stored in that particular
-									smart contract.
-								</p>
-								<header>
-									<h4>4.2 Publishing an entire verifiable CV</h4>
-								</header>
-								<p>
-									The procedure for publishing a single verifiable reference is non-interactive, i.e. it does
-									not require a dialogue between <strong>A</strong> and the verifying third party. Thus, <strong>A</strong> can publish an
-									entire verifiable CV by publishing all the constituent records individually and collating
-									them in a single document.
-								</p>
-									A third party can verify the CV by validating all the constituent records and additionally
-									checking that they all <font face="courier">belongTo</font> the same profile.
-							</section>
-
-							<section>
-								Go to:
-
-								<ul>
-									<li><a href="technical-spec.pdf"><strong>Full PDF</strong></a></li>
+					</li>
+					<li>
+						<a href="#">Development</a>
+						<ul style="list-style-type:none">
+							<li><a href="requirements.html">Requirements</a></li>
+							<li><a href="design.html">Design &amp; HCI</a></li>
+							<li><a href="architecture.html">Architecture</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Project management</a>
+						<ul style="list-style-type:none">
+							<li><a href="structure.html">Work structure</a></li>
+							<li>
+								<a href="#">Reports</a>
+								<ul style="list-style-type:none">
+									<span>Term 1</span>
+									<li><a href="reports/biweekly_report_1.pdf">Oct 4 – Oct 12</a></li>
+									<li><a href="reports/biweekly_report_2.pdf">Oct 13 – Oct 28</a></li>
+									<li><a href="reports/biweekly_report_3.pdf">Oct 29 – Nov 18</a></li>
+									<li><a href="reports/biweekly_report_4.pdf">Nov 19 – Dec 2</a></li>
+									<li><a href="reports/biweekly_report_5.pdf">Dec 3 – Dec 16</a></li>
+									<span>Term 2</span>
+									<li><a href="reports/biweekly_report_6.pdf">Jan 6 – Jan 27</a></li>
+									<li><a href="reports/biweekly_report_7.pdf">Jan 30 – Feb 10</a></li>
+									<li><a href="reports/biweekly_report_8.pdf">Feb 11 – Feb 27</a></li>
+									<li><a href="reports/biweekly_report_9.pdf">Feb 28 – Mar 10</a></li>
+									<li><a href="reports/biweekly_report_10.pdf">Mar 11 – Mar 24</a></li>
 								</ul>
+								<li><a href="experimentation.html">Experiments</a></li>
 
-							</section>
-						</article>
+							</li>
+						</ul>
+					</li>
+					<li><a href="testing.html">Testing</a></li>
+					<li><a href="evaluation.html">Evaluation</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<!-- End menu -->
 
-						<hr />
-						<div class="row">
-							<article class="4u 12u(mobile) special">
-								<header>
-									<h3><a href="#">Authenticating Profiles</a></h3>
-								</header>
-								<p>
 
-								</p>
-								<a href="#" class="image featured"><img src="images/creating-profile.png" alt="" /></a>
-							</article>
+	<!-- Main -->
+	<div class="wrapper style1">
 
-							<article class="4u 12u(mobile) special">
-								<header>
-									<h3><a href="#">Association of Records</a></h3>
-								</header>
-								<p>
+		<div class="container">
+			<article id="main" class="special">
+				<header>
+					<h2>Technical Specification</h2>
+				</header>
+				<section>
+					<header>
+						<h3>1 Overview</h3>
+					</header>
+					<p>
+						Our system uses a blockchain to provide a decentralised record of individuals’ professional credentials.
+					</p>
+					<p>
+						Individuals can ask organisations (or other individuals) to cryptographically attach references or endorsements to their profile. Requests for reference are implemented so that, once the reference is provided, the individual cannot claim it was unsolicited
+						or refuse to accept it because of its content — references cannot be repudiated. Using the same process, organisations can request reviews.
+					</p>
+					<p>
+						When creating a new profile, users have to self-attach a reference that grounds the profile to a particular real-life identity (name, date of birth, corporate registration information, etc.). If a user wants to be able to give verifiable references, they
+						must additionally have their identity grounded by a <i> trusted third party </i>.
+					</p>
+					<p>
+						The records attached to profiles, stored in the blockchain, do not include the actual content of the reference or endorsement, but merely a hash of the content. This also applies for the initial identity-grounding self-reference. Thus, profiles are public,
+						but no data is disclosed by default. Users can choose which parts of their profile to disclose by selectively publishing the content of certain records.
+					</p>
+				</section>
+				<section>
+					<header>
+						<h3>2 Creating a profile and grounding its identity</h3>
+					</header>
+					<p>
+						To create a profile, a user must generate a public/private key-pair. The public key is hashed to obtain a profile address, which is used to refer to the profile. The private key is used to control the profile.
+					</p>
+					<p>
+						Before being able to request references from others, a user has to self-attach a reference that grounds their identity.
+					</p>
+					<table style="width:100%" align="center" class="table1">
+						<tr>
+							<th><strong>Field</strong></th>
+							<th><strong>Value</strong></th>
+							<th><strong>Salt</strong></th>
+							<th><strong>Hash</strong></th>
+						</tr>
+						<tr>
+							<th>Name</th>
+							<th>Michael Longworth</th>
+							<th>@38Bv>y+ve5RiVwZ</th>
+							<th>9916ffbd3944e34fb6d62e1048571e100b47ab5152fe53d21f261ff7d9b2d566</th>
+						</tr>
+						<tr>
+							<th>Date of birth</th>
+							<th>1980-12-02</th>
+							<th>6W3aP5d!ZnR</th>
+							<th>c300d1a45fb137bdcec8c3171a75949278c7b400b6a16df986315700380892183</th>
+						</tr>
+						<tr>
+							<th>Identification code</th>
+							<th>61152345</th>
+							<th>VWn9fpQ(5LHzZ</th>
+							<th>633209a51879bb3b64293c0ac16e72770ea55c8d5c1013febbf4802b4fdc3c2b</th>
+						</tr>
+					</table>
+					<p>
+						To self-attach a reference that grounds your identity, proceed as follows:
+					</p>
+					<ol type="1">
+						<li> For each (
+							<font face="courier">fieldName</font>,
+							<font face="courier">value</font>) pair, generate a unique random
+							<font face="courier">salt</font>
+						</li>
+						<li>Hash each (
+							<font face="courier">value</font>,
+							<font face="courier">salt</font>) tuple separately</li>
+						<li>Collate all (
+							<font face="courier">fieldname</font>,
+							<font face="courier">value</font>) pairs</li>
+						<li>Sign the result with your private key to obtain your <i>grounded identity</i></li>
+						<li>Self-attach your grounded identity to your profile</li>
+					</ol>
+					<p>
+						The user’s profile management software needs to store the field values and salts to be able to, at a later time, prove to a third party that the profile is indeed linked with the user’s real-life identity.
+					</p>
 
-								</p>
-								<a href="#" class="image featured"><img src="images/request_ref.png" alt="" /></a>
-							</article>
+				</section>
+				<section>
+					<header>
+						<h4>2.1 Third-party grounding</h4>
+					</header>
+					<p>
+						If a user (organisation or individual) wants to give out references that are verifiable by others, in addition to the procedure above, their identity must also be grounded by a trusted <i> identity provider </i> (IdP)
+					</p>
+					<p>
+						To have their identity grounded by an IdP, users must provide proof of their real identity. For example, they could provide a copy of their passport or corporate registration documents.
+					</p>
+					<p>
+						For easier use in practice, the profile management software can be shipped with a set of predefined trusted IdPs.
+					</p>
+				</section>
+				<section>
+					<header>
+						<h3>3 Attaching records to profiles</h3>
+					</header>
+					<p>
+						Records are implemented as smart contracts. To request a reference or endorsement, a user <strong>A</strong> creates a smart contract that the referee <strong>B</strong> can add to. For example:
+					</p>
+					<table style="width:100%" align="center">
+						<tr>
+							<th align="center"><strong>Field</strong></td>
+								<th align="center"><strong>Initial value</strong></td>
+									<th align="center"><strong>Strongs</strong></td>
+						</tr>
+						<tr>
+							<td align="center">belongsTo</td>
+							<td align="center"><i>addr<sub>A</sub></i></td>
+							<td align="center">Immutable</td>
+						</tr>
+						<tr>
+							<td align="center">providedBy</td>
+							<td align="center"><i>addr<sub>B</sub></i></td>
+							<td align="center">Immutable</td>
+						</tr>
+						<tr>
+							<td align="center">referenceHash</td>
+							<td align="center"></td>
+							<td align="center"></td>
+						</tr>
+						<tr>
+							<td align="center"><strong>Method</strong></td>
+							<td align="center"><strong>Can be called by</strong></td>
+							<td align="center"><strong>Comment</strong></td>
+						</tr>
+						<tr>
+							<td align="center">addReference(<i>hash</i>)</td>
+							<td align="center">B</td>
+							<td align="center">Can only be called once</td>
+						</tr>
+					</table>
+					<p>
+						To provide the reference, <strong>B</strong> calls the
+						<font face="courier">addReference()</font> method of the contract and passes it a hash of the reference’s content. Through external means (e.g. via e-mail), <strong>B</strong> sends <strong>A</strong> the content of the reference and discloses a part of their identity
+						(e.g.,
+						<font face="courier">value</font>
+						and
+						<font face="courier">salt</font> of their name). <strong>A</strong> stores this information for later use.
+					</p>
+					<p>
+						The system is extensible, so different smart contracts can be deployed for different types of records: certificates, employment records, professional association membership, school transcripts, etc.
+					</p>
+				</section>
+				<section>
+					<header>
+						<h4>3.1 Floating records</h4>
+					</header>
+					<p>
+						A floating record is attached directly to a real-life identity, rather than to a profile. Using floating records, organisations can emit certificates for people who haven’t yet created a profile.
+					</p>
+					<p>
+						To claim a floating record, a user has to prove that their profile’s grounded identity is the same as the record’s.
+					</p>
+				</section>
 
-							<article class="4u 12u(mobile) special">
-								<header>
-									<h3><a href="#">Creation of verifiable CVs</a></h3>
-								</header>
-								<p>
 
-								</p>
-								<a href="#" class="image featured"><img src="images/cv.png" alt="" /></a>
-							</article>
-						</div>
-					</div>
+				<section>
+					<header>
+						<h3>4 Publishing verifiable CVs</h3>
+					</header>
+					<header>
+						<h4>4.1 Publishing a single verifiable reference</h4>
+					</header>
+					<p>
+						To make a reference provided by <strong>B</strong> verifiable, <strong>A</strong> discloses their address, the reference’s content (e.g. <i>Good employee</i>) and part of <strong>B</strong>’s identity (e.g. Name: <i>ACME Corp</i>).
+					</p>
+					<p>
+						To verify the validity of the reference, proceed as follows:
+					</p>
+					<p>
+						<ol>
+							<li>Hash the reference content and check that it matches the stored
+								<font face="courier">referenceHash</font>
+							</li>
+							<li>Check that the smart contract belongsTo <strong>A</strong></li>
+							<li>Verify that <strong>B</strong> disclosed <strong>B</strong>’s actual identity</li>
+							<li>Confirm that <strong>B</strong>’s identity has been grounded by a trusted IdP</li>
+						</ol>
+					</p>
+					<p>
+						If all the steps are successful, we have proved that <strong>B</strong> (<i>ACME Corp</i>) has said that whoever owns <strong>A</strong>’s profile was a <i>Good employee</i>.
+					</p>
+					<p>
+						Step 1 of the verification procedure may differ slightly based on the type of record that is being verified, as it depends on how the information is stored in that particular smart contract.
+					</p>
+					<header>
+						<h4>4.2 Publishing an entire verifiable CV</h4>
+					</header>
+					<p>
+						The procedure for publishing a single verifiable reference is non-interactive, i.e. it does not require a dialogue between <strong>A</strong> and the verifying third party. Thus, <strong>A</strong> can publish an entire verifiable CV by publishing
+						all the constituent records individually and collating them in a single document.
+					</p>
+					A third party can verify the CV by validating all the constituent records and additionally checking that they all
+					<font face="courier">belongTo</font> the same profile.
+				</section>
 
-				</div>
-<div id="footer">
-					<div class="container">
-						<div class="row">
+				<section>
+					Go to:
 
-							<!-- Tweets -->
-							<section class="4u 12u(mobile)">
-								<header>
-									<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
-								</header>
-								<a class="twitter-timeline" data-theme="white" href="https://twitter.com/BitKariero" width="352" height="500">Tweets by @BitKariero</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?"http":"https";if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-							</section>
+					<ul>
+						<li><a href="reports/technical-spec.pdf"><strong>Full PDF</strong></a></li>
+					</ul>
 
-						<!-- Posts -->
-						<section class="4u 12u(mobile)">
-							<header>
-								<h2 class="icon fa-github circled"><span class="label">Posts</span></h2>
-							</header>
-								<iframe src="http://nlalonde.github.com/commits-widget/index.html?owner=BitKariero&repo=experiments&limit=10&width=500&height=1550" width="352px" height="500"></iframe>
-						</section>
+				</section>
+			</article>
 
-							<section class="4u 12u(mobile)">
-								<header>
-									<h2 class="icon fa-github circled"><span class="label">Posts</span></h2>
-								</header>
-									<iframe src="http://nlalonde.github.com/commits-widget/index.html?owner=BitKariero&repo=technical-specification&limit=10&width=500&height=1550" width="352px" height="500"></iframe>
-							</section>
-						</div>
+			<hr />
+			<div class="row">
+				<article class="4u 12u(mobile) special">
+					<header>
+						<h3><a href="#">Authenticating Profiles</a></h3>
+					</header>
+					<p>
 
-						<div class="row">
-							<div class="12u">
+					</p>
+					<a href="#" class="image featured"><img src="images/creating-profile.png" alt="" /></a>
+				</article>
 
-								<!-- Contact -->
-								<section class="contact">
-									<header>
-										<h3>Want to give feedback? Contact Us!</h3>
-									</header>
-									<p>We are active on Twitter and GitHub, so feel free to contact us!</p>
-									<ul class="icons">
-										<li><a href="https://twitter.com/BitKariero" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="https://github.com/BitKariero" class="icon fa-github"><span class="label">Facebook</span></a></li>
-									</ul>
-								</section>
+				<article class="4u 12u(mobile) special">
+					<header>
+						<h3><a href="#">Association of Records</a></h3>
+					</header>
+					<p>
 
-							<!-- Copyright -->
-								<div class="copyright">
-									<ul class="menu">
-										<li>&copy; BitKariero Project. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-									</ul>
-								</div>
+					</p>
+					<a href="#" class="image featured"><img src="images/request_ref.png" alt="" /></a>
+				</article>
 
-							</div>
+				<article class="4u 12u(mobile) special">
+					<header>
+						<h3><a href="#">Creation of verifiable CVs</a></h3>
+					</header>
+					<p>
 
-						</div>
-					</div>
-				</div>
-
+					</p>
+					<a href="#" class="image featured"><img src="images/cv.png" alt="" /></a>
+				</article>
+			</div>
 		</div>
 
+	</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.onvisible.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
 
-	</body>
+	<!-- Footer -->
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+
+				<!-- Tweets -->
+				<section class="6u 12u(mobile)">
+					<header>
+						<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+					</header>
+					<center>
+						<a class="twitter-timeline" data-theme="white" href="https://twitter.com/BitKariero" width="352" height="500">Tweets by @BitKariero</a>
+						<script>
+							! function(d, s, id) {
+								var js, fjs = d.getElementsByTagName(s)[0],
+									p = /^http:/.test(d.location) ? "http" : "https";
+								if (!d.getElementById(id)) {
+									js = d.createElement(s);
+									js.id = id;
+									js.src = p + "://platform.twitter.com/widgets.js";
+									fjs.parentNode.insertBefore(js, fjs);
+								}
+							}(document, "script", "twitter-wjs");
+						</script>
+					</center>
+				</section>
+
+				<!-- Posts -->
+				<section class="6u 12u(mobile)">
+					<header>
+						<h2 class="icon fa-github circled"><span class="label">Posts</span></h2>
+					</header>
+					<center>
+						<iframe src="http://nlalonde.github.com/commits-widget/index.html?owner=BitKariero&repo=bitkariero&limit=20&width=500&height=500" width="550" height="550"></iframe>
+					</center>
+				</section>
+			</div>
+
+			<div class="row">
+				<div class="12u">
+
+					<!-- Contact -->
+					<section class="contact">
+						<header>
+							<h3>Want to give feedback? Contact Us!</h3>
+						</header>
+						<p>We are active on Twitter and GitHub, so feel free to contact us!</p>
+						<center>
+							<ul class="icons">
+								<li><a href="https://twitter.com/BitKariero" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://github.com/BitKariero" class="icon fa-github"><span class="label">Facebook</span></a></li>
+							</ul>
+						</center>
+					</section>
+
+					<!-- Copyright -->
+					<div class="copyright">
+						<ul class="menu">
+							<li>&copy; BitKariero Project. All rights reserved.</li>
+							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.onvisible.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
