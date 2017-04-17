@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<link rel="shortcut icon" type="image/ico" href="favicon.png" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+	<title>BitKariero</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	<link rel="stylesheet" href="assets/css/xtra.css" />
+</head>
+
+<body class="no-sidebar">
+	<div id="page-wrapper">
+		<!-- Header -->
+		<div id="header">
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="#">Documentation</a>
+						<ul style="list-style-type:none">
+							<li><a href="background-context.html">Background</a></li>
+							<li><a href="research.html">Research report</a></li>
+							<li><a href="technical-specification.html">Technical specification</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Development</a>
+						<ul style="list-style-type:none">
+							<li><a href="requirements.html">Requirements</a></li>
+							<li><a href="design.html">Design &amp; HCI</a></li>
+							<li><a href="architecture.html">Architecture</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="#">Project management</a>
+						<ul style="list-style-type:none">
+							<li><a href="structure.html">Work structure</a></li>
+							<li>
+								<a href="#">Reports</a>
+								<ul style="list-style-type:none">
+									<span>Term 1</span>
+									<li><a href="reports/biweekly_report_1.pdf">Oct 4 – Oct 12</a></li>
+									<li><a href="reports/biweekly_report_2.pdf">Oct 13 – Oct 28</a></li>
+									<li><a href="reports/biweekly_report_3.pdf">Oct 29 – Nov 18</a></li>
+									<li><a href="reports/biweekly_report_4.pdf">Nov 19 – Dec 2</a></li>
+									<li><a href="reports/biweekly_report_5.pdf">Dec 3 – Dec 16</a></li>
+									<span>Term 2</span>
+									<li><a href="reports/biweekly_report_6.pdf">Jan 6 – Jan 27</a></li>
+									<li><a href="reports/biweekly_report_7.pdf">Jan 30 – Feb 10</a></li>
+									<li><a href="reports/biweekly_report_8.pdf">Feb 11 – Feb 27</a></li>
+									<li><a href="reports/biweekly_report_9.pdf">Feb 28 – Mar 10</a></li>
+									<li><a href="reports/biweekly_report_10.pdf">Mar 11 – Mar 24</a></li>
+								</ul>
+								<li><a href="experimentation.html">Experiments</a></li>
+
+							</li>
+						</ul>
+					</li>
+					<li><a href="testing.html">Testing</a></li>
+					<li><a href="evaluation.html">Evaluation</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<!-- End menu -->
+
+
+	<!-- Main -->
+	<div class="wrapper">
+		<article id="main" class="container special">
+			<h2 style="text-align: center;">Architecture</h2>
+
+			<h3 style="text-align: center; padding-bottom: 1em;">The backbone of our
+			application is built on <strong>Ethereum</strong> and
+			<strong>IPFS</strong>.</h3>
+
+			<img src=images/architecture.png style="height:425px; float: left; margin:
+			1em; "></img>
+
+			<p>We have written <em>smart contracts</em> to represent individual users
+			(identities), as well as different type of records that may be associated
+			with users: references, membership of professional associations etc. On
+			top of this, we have a main contract, which keeps track of registered
+			identities and records and emits events to signal to the API that a new
+			contract has been registered.</p>
+
+			<p>To store user information and reference contents, we use IPFS — the
+			fields in the smart contracts hold IPFS hashes and the API transparently
+			retrieves the content when these fields are accessed. As an experiment, we
+			implemented basic public key cryptography using the <strong>W3C WebCrypto
+			API</strong> — which was surprisingly easy to use. You can use the
+			BitKariero API to provide encrypted references to other users. Key
+			transfer is done through dedicated pubKey fields in identity
+			contracts.</p>
+
+			<p>Our BitKariero API is written in Javascript and makes extensive use of
+			the popular <strong>Embark</strong> framework, which provides bindings for
+			communicating with local Ethereum and IPFS nodes. For the user interface,
+			we used <strong>React</strong> and <strong>Semantic UI</strong>.</p>
+
+		</article>
+	</div>
+
+
+	<!-- Footer -->
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+
+				<!-- Tweets -->
+				<section class="6u 12u(mobile)">
+					<header>
+						<h2 class="icon fa-twitter circled"><span class="label">Tweets</span></h2>
+					</header>
+					<center>
+						<a class="twitter-timeline" data-theme="white" href="https://twitter.com/BitKariero" width="352" height="500">Tweets by @BitKariero</a>
+						<script>
+							! function(d, s, id) {
+								var js, fjs = d.getElementsByTagName(s)[0],
+									p = /^http:/.test(d.location) ? "http" : "https";
+								if (!d.getElementById(id)) {
+									js = d.createElement(s);
+									js.id = id;
+									js.src = p + "://platform.twitter.com/widgets.js";
+									fjs.parentNode.insertBefore(js, fjs);
+								}
+							}(document, "script", "twitter-wjs");
+						</script>
+					</center>
+				</section>
+
+				<!-- Posts -->
+				<section class="6u 12u(mobile)">
+					<header>
+						<h2 class="icon fa-github circled"><span class="label">Posts</span></h2>
+					</header>
+					<center>
+						<iframe src="http://nlalonde.github.com/commits-widget/index.html?owner=BitKariero&repo=bitkariero&limit=20&width=500&height=500" width="550" height="550"></iframe>
+					</center>
+				</section>
+			</div>
+
+			<div class="row">
+				<div class="12u">
+
+					<!-- Contact -->
+					<section class="contact">
+						<header>
+							<h3>Want to give feedback? Contact Us!</h3>
+						</header>
+						<p>We are active on Twitter and GitHub, so feel free to contact us!</p>
+						<center>
+							<ul class="icons">
+								<li><a href="https://twitter.com/BitKariero" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+								<li><a href="https://github.com/BitKariero" class="icon fa-github"><span class="label">Facebook</span></a></li>
+							</ul>
+						</center>
+					</section>
+
+					<!-- Copyright -->
+					<div class="copyright">
+						<ul class="menu">
+							<li>&copy; BitKariero Project. All rights reserved.</li>
+							<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.onvisible.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
