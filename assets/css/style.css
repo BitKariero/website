@@ -28,3 +28,18 @@ table td, table th {
 .image.featured.team-photo {
   margin-bottom: 0.5em;
 }
+
+table.usecase th {
+  font-weight: bold;
+  min-width: 5em;
+  text-align: center;
+}
+
+table.usecase th, table.usecase td {
+  vertical-align: middle;
+  padding: 0.25em;
+}
+
+table.usecase td {
+  padding-left: 1em;
+}
