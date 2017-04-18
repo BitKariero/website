@@ -75,51 +75,58 @@
 	<!-- Main -->
 	<div class="wrapper">
 		<article id="main" class="container special">
-			<h2 style="text-align: center;">Architecture</h2>
+			<h2>Development process</h2>
+			<p>We had a well-structured development process. Every week (or when
+			otherwise needed), we would meet in person to discuss what we're working
+			on, what we've accomplished and to assign tasks for the future. Between
+			meetings, we communicated using Slack. Overall, we had an Agile-like
+			development process, with 2 week long sprints.</p>
 
-			<h3 style="text-align: center; padding-bottom: 1em;">The backbone of our
-			application is built on <strong>Ethereum</strong> and
-			<strong>IPFS</strong>.</h3>
-
-			<img src=images/architecture.png style="height:425px; float: left; margin:
-			1em; "></img>
-
-			<p>We have written <em>smart contracts</em> to represent individual users
-			(identities), as well as different type of records that may be associated
-			with users: references, membership of professional associations etc. On
-			top of this, we have a main contract, which keeps track of registered
-			identities and records and emits events to signal to the API that a new
-			contract has been registered.</p>
-
-			<p>To store user information and reference contents, we use IPFS — the
-			fields in the smart contracts hold IPFS hashes and the API transparently
-			retrieves the content when these fields are accessed. As an experiment, we
-			implemented basic public key cryptography using the <strong>W3C WebCrypto
-			API</strong> — which was surprisingly easy to use. You can use the
-			BitKariero API to provide encrypted references to other users. Key
-			transfer is done through dedicated pubKey fields in identity
-			contracts.</p>
-
-			<p>Our BitKariero API is written in Javascript and makes extensive use of
-			the popular <strong>Embark</strong> framework, which provides bindings for
-			communicating with local Ethereum and IPFS nodes. For the user interface,
-			we used <strong>React</strong> and <strong>Semantic UI</strong>.</p>
-
-			<h2 style="text-align: center; padding-top: 0l5em; padding-bottom: 1em;">Class Diagrams</h2>
+			<center>
+				<h2>Tools</h2><br>
+			</center>
 			<div class="row">
-				<article class="12u 12u(mobile) special">
-					<a href="images/contracts.png"><span class="image featured "><img src="images/contracts.png" alt="" /></span></a>
-				</article>
-			</div>
-			<div class="row">
-				<article class="6u 12u(mobile) special">
-					<a href="images/floating.png"><span class="image featured "><img src="images/floating.png" alt="" /></span></a>
-				</article>
-				<article class="6u 12u(mobile) special">
-					<a href="images/identity.png"><span class="image featured "><img src="images/identity.png" alt="" /></span></a>
-				</article>
+				<section class="4u 12u(mobile)">
+						<a href="images/slack.png"><img src=images/slack.png height="300px;"></img></a>
+				</section>
+				<section class="8u 12u(mobile)">
+					<p><strong>Slack</strong> was our main communication mechanism, and
+					also served as a formal record of what has been discussed. After every
+					meeting, we would post the meeting minutes on Slack. Thus, our
+					<em>#t3-dev</em> channel contains the entire history of our
+					project.</p> <p>In addition, we added a GitHub integration to Slack,
+					so activity (commit, pull request, issue) on any of our Git
+					repositories would emit a message on our main channel. This made it
+					much easier to see how the project is shaping up and to keep up to
+					date with what other team members are doings.</p>
+				</section>
 			</div>
 
+			<div class="row">
+				<section class="4u 12u(mobile)">
+					<a href="images/github-org.png"><img src=images/github-org.png height="350px;"></img></a>
+				</section>
+				<section class="8u 12u(mobile)">
+					<p>For version control, we used <strong>Git</strong>, with our
+					repositories hosted on <strong>GitHub</strong>. Since we had multiple
+					repositories, we created <a href="https://github.com/bitkariero">an
+					organisation</a>. This way, all the repositories associated with the
+					project are kept in a single place. This also made it easier to
+					implement the GitHub integration for Slack.</p>
+					<p>You can see all our code, including the source for this website, at <strong>
+					<a
+					href="https://github.com/bitkariero">github.com/BitKariero</a></strong></p>
+					<p>To store and share files between ourselves, we used <strong>Google
+					Drive</strong>, as well as Slack's file sharing feature. In general,
+					Slack was reserved for only <em>output</em> files (e.g. PDFs, SVGs),
+					while Google Drive also stored the sources for these outputs (e.g.
+					LaTeX sources).</p>
+					<p>For project management, we initially used <strong>Trello</strong>,
+					although we abandoned it when we realized that it's less than ideal
+					for our particular use-case (few tasks to keep track of). Eventually,
+					we ended up using Slack to organise our tasks, as well.</p>
+				</section>
+			</div>
 
 
 		</article>
